@@ -7,7 +7,23 @@
         SELECT username from user where username = #{userName}
     </select>
 
+    <select id="verifyPassWord" resultType="String">
+        SELECT password from user where username = #{userName}
+    </select>
+
+    <select id="getUserToken" resultType="String">
+        SELECT token from user where username = #{userName}
+    </select>
+
     <insert id="newUser">
         INSERT INTO user (username, password) VALUES (#{userName}, #{passWord})
     </insert>
+
+    <update id="newToken">
+        UPDATE user SET token = #{token} where username = #{userName}
+    </update>
+
+    <update id="cleanToken">
+        UPDATE user SET token = "" where username = #{userName}
+    </update>
 </mapper>

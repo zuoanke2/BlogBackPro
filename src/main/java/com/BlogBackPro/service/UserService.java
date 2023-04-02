@@ -11,6 +11,9 @@ import org.springframework.stereotype.Service;
  */
 @Service
 public interface UserService {
-    boolean verifyUserName(String userName);
-    void newUser(String userName, String passWord);
+    String newUser(String userName, String passWord);
+
+    String login(String userName, String passWord);
+
+    String logout(String userName, String userToken);
 }

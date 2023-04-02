@@ -4,6 +4,7 @@ public class UserVO {
     private int userId;
     private String userName;
     private String passWord;
+    private String token;
 
     public int getUserId() {
         return userId;
@@ -27,5 +28,13 @@ public class UserVO {
 
     public void setPassWord(String passWord) {
         this.passWord = passWord;
+    }
+
+    public String getToken() {
+        return token;
+    }
+
+    public void setToken(String token) {
+        this.token = token;
     }
 }
