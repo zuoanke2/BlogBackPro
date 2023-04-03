@@ -14,5 +14,7 @@ public interface BlogMapper {
     void deleteBlog(int blogId);
 
     List<BlogBean> queryAllBlogs();
+
+    List<BlogBean> queryBlogsByUserId(int authorId);
 }
 

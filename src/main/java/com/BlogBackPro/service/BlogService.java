@@ -14,4 +14,6 @@ public interface BlogService {
     String deleteBlog(int blogId);
 
     List<BlogBean> queryAllBlogs();
+
+    List<BlogBean> queryBlogsByUserId(int authorId);
 }

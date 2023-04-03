@@ -1,6 +1,5 @@
 package com.BlogBackPro.controller;
 
-import com.BlogBackPro.mapper.BlogMapper;
 import com.BlogBackPro.mapper.UserMapper;
 import com.BlogBackPro.model.BlogBean;
 import com.BlogBackPro.service.BlogService;
@@ -54,6 +53,16 @@ public class BlogController {
         String userName = userMapper.queryUserNameById(blogBean.getAuthorId());
         if (blogBean.getToken().equals(userMapper.getUserToken(userName))) {
             return blogService.queryAllBlogs();
+        } else {
+            return null;
+        }
+    }
+
+    @PostMapping("/blog/my")
+    public List<BlogBean> queryMyBlogs(@RequestBody BlogBean blogBean) {
+        String userName = userMapper.queryUserNameById(blogBean.getAuthorId());
+        if (blogBean.getToken().equals(userMapper.getUserToken(userName))) {
+            return blogService.queryBlogsByUserId(blogBean.getAuthorId());
         } else {
             return null;
         }

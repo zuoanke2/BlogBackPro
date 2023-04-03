@@ -18,4 +18,8 @@
     <select id="queryAllBlogs" resultType="com.BlogBackPro.model.BlogBean">
         SELECT * from blog
     </select>
+
+    <select id="queryBlogsByUserId" resultType="com.BlogBackPro.model.BlogBean">
+        SELECT * from blog where authorid = #{authorId}
+    </select>
 </mapper>

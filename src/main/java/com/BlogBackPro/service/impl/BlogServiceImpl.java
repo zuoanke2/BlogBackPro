@@ -36,4 +36,9 @@ public class BlogServiceImpl implements BlogService {
     public List<BlogBean> queryAllBlogs() {
         return blogMapper.queryAllBlogs();
     }
+
+    @Override
+    public List<BlogBean> queryBlogsByUserId(int authorId) {
+        return blogMapper.queryBlogsByUserId(authorId);
+    }
 }
