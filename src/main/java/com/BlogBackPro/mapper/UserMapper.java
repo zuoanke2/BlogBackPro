@@ -17,4 +17,6 @@ public interface UserMapper {
     void newToken(String userName, String token);
 
     void cleanToken(String userName);
+
+    void deleteUser(int deleteUserId);
 }

@@ -30,4 +30,8 @@
     <update id="cleanToken">
         UPDATE user SET token = "" where username = #{userName}
     </update>
+
+    <delete id="deleteUser">
+        DELETE FROM user WHERE userid = #{deleteUserId}
+    </delete>
 </mapper>

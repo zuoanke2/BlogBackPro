@@ -24,4 +24,9 @@ public class UserController {
     public String logout(@RequestBody UserVO userVO) {
         return userService.logout(userVO.getUserName(), userVO.getToken());
     }
+
+    @PostMapping("/user/delete")
+    public String deleteUser(@RequestBody UserVO userVO) {
+        return userService.deleteUser(userVO.getUserId(), userVO.getToken());
+    }
 }

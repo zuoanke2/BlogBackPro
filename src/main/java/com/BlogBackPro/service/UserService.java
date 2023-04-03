@@ -9,4 +9,6 @@ public interface UserService {
     String login(String userName, String passWord);
 
     String logout(String userName, String userToken);
+
+    String deleteUser(int deleteUserId, String adminToken);
 }

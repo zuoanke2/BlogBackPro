@@ -56,4 +56,13 @@ public class UserServiceImpl implements UserService {
             return "invalid user!";
         }
     }
+
+    public String deleteUser(int deleteUserId, String adminToken) {
+        if (adminToken.equals(userMapper.getUserToken("admin"))) {
+            userMapper.deleteUser(deleteUserId);
+            return "an user was deleted!";
+        } else {
+            return "invalid user!";
+        }
+    }
 }
