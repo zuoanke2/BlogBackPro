@@ -14,4 +14,8 @@
     <delete id="deleteBlog">
         DELETE FROM blog WHERE blogid = #{blogId}
     </delete>
+
+    <select id="queryAllBlogs" resultType="com.BlogBackPro.model.BlogBean">
+        SELECT * from blog
+    </select>
 </mapper>

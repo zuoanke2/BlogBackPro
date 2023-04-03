@@ -1,10 +1,13 @@
 package com.BlogBackPro.service.impl;
 
+import com.BlogBackPro.controller.BlogController;
 import com.BlogBackPro.mapper.BlogMapper;
+import com.BlogBackPro.model.BlogBean;
 import com.BlogBackPro.service.BlogService;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
+import java.util.List;
 
 @Service
 public class BlogServiceImpl implements BlogService {
@@ -27,5 +30,10 @@ public class BlogServiceImpl implements BlogService {
     public String deleteBlog(int blogId) {
         blogMapper.deleteBlog(blogId);
         return "this blog was deleted!";
+    }
+
+    @Override
+    public List<BlogBean> queryAllBlogs() {
+        return blogMapper.queryAllBlogs();
     }
 }

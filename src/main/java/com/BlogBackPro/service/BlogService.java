@@ -1,6 +1,9 @@
 package com.BlogBackPro.service;
 
+import com.BlogBackPro.model.BlogBean;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 @Service
 public interface BlogService {
@@ -9,4 +12,6 @@ public interface BlogService {
     String modifyBlog(String title, String content, int blogId);
 
     String deleteBlog(int blogId);
+
+    List<BlogBean> queryAllBlogs();
 }
