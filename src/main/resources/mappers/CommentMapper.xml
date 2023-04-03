@@ -19,7 +19,7 @@
         DELETE FROM comment WHERE commentid = #{commentId}
     </delete>
 
-    <select id="queryCommendListByUserId">
+    <select id="queryCommendListByUserId" resultType="com.BlogBackPro.model.CommentBean">
         SELECT * from comment where authorid = #{userId}
     </select>
 

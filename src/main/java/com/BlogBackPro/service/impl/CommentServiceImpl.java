@@ -1,10 +1,12 @@
 package com.BlogBackPro.service.impl;
 
 import com.BlogBackPro.mapper.CommentMapper;
+import com.BlogBackPro.model.CommentBean;
 import com.BlogBackPro.service.CommentService;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
+import java.util.List;
 
 @Service
 public class CommentServiceImpl implements CommentService {
@@ -27,5 +29,10 @@ public class CommentServiceImpl implements CommentService {
     public String deleteComment(int commentId) {
         commentMapper.deleteComment(commentId);
         return "comment deleted!";
+    }
+
+    @Override
+    public List<CommentBean> queryCommendListByUserId(int userId) {
+        return commentMapper.queryCommendListByUserId(userId);
     }
 }

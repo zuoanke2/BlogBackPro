@@ -12,4 +12,6 @@ public interface CommentService {
     String modifyComment(int commentId, String comment);
 
     String deleteComment(int commentId);
+
+    List<CommentBean> queryCommendListByUserId(int userId);
 }

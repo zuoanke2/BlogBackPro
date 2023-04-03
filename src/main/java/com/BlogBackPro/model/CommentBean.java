@@ -5,6 +5,7 @@ public class CommentBean {
     private String comment;
     private int blogId;
     private int authorId;
+    private String blogTitle;
     private String token;
 
     public int getCommentId() {
@@ -37,6 +38,14 @@ public class CommentBean {
 
     public void setAuthorId(int authorId) {
         this.authorId = authorId;
+    }
+
+    public String getBlogTitle() {
+        return blogTitle;
+    }
+
+    public void setBlogTitle(String blogTitle) {
+        this.blogTitle = blogTitle;
     }
 
     public String getToken() {

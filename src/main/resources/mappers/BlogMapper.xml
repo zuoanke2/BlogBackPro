@@ -30,4 +30,8 @@
     <select id="queryAuthorByBlogId" resultType="Integer">
         SELECT authorid from blog where blogid = #{blogId}
     </select>
+
+    <select id="queryTitleByBlogId" resultType="String">
+        SELECT title from blog where blogid = #{blogId}
+    </select>
 </mapper>

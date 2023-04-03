@@ -52,4 +52,18 @@ public class CommentController {
             return "invalid user!";
         }
     }
+
+    @PostMapping("/comment/my")
+    public List<CommentBean> queryCommendListByUserId(@RequestBody CommentBean commentBean) {
+        String userName = userMapper.queryUserNameById(commentBean.getAuthorId());
+        if (commentBean.getToken().equals(userMapper.getUserToken(userName))) {
+            List<CommentBean> res = commentService.queryCommendListByUserId(commentBean.getAuthorId());
+            for (CommentBean commentBean1 : res) {
+                commentBean1.setBlogTitle(blogMapper.queryTitleByBlogId(commentBean1.getBlogId()));
+            }
+            return res;
+        } else {
+            return null;
+        }
+    }
 }
