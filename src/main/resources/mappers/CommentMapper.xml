@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.BlogBackPro.mapper.CommentMapper">
+    <select id="queryCommendListByBlogId" resultType="com.BlogBackPro.model.CommentBean">
+        SELECT * from comment where blogid = #{blogId}
+    </select>
+
+    <insert id="addComment">
+        INSERT INTO comment (authorid, blogid, comment) VALUES (#{authorId}, #{blogId}, #{comment})
+    </insert>
+
+    <update id="updateComment">
+        UPDATE comment SET comment = #{comment} where commentid = #{commentId}
+    </update>
+
+    <delete id="deleteComment">
+        DELETE FROM comment WHERE commentid = #{commentId}
+    </delete>
+
+    <select id="queryCommendListByUserId">
+        SELECT * from comment where authorid = #{userId}
+    </select>
+</mapper>

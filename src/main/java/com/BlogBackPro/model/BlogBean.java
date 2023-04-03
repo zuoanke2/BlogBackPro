@@ -1,11 +1,16 @@
 package com.BlogBackPro.model;
 
+import java.util.List;
+
 public class BlogBean {
     private int blogId;
     private String title;
     private int authorId;
+    private String authorName;
     private String content;
     private String token;
+
+    private List<CommentBeanSimple> commentList;
 
     public int getBlogId() {
         return blogId;
@@ -45,5 +50,21 @@ public class BlogBean {
 
     public void setToken(String token) {
         this.token = token;
+    }
+
+    public List<CommentBeanSimple> getCommentList() {
+        return commentList;
+    }
+
+    public void setCommentList(List<CommentBeanSimple> commentList) {
+        this.commentList = commentList;
+    }
+
+    public String getAuthorName() {
+        return authorName;
+    }
+
+    public void setAuthorName(String authorName) {
+        this.authorName = authorName;
     }
 }
