@@ -16,4 +16,10 @@ public class CommentServiceImpl implements CommentService {
         commentMapper.addComment(authorId, blogId, comment);
         return "comment added!";
     }
+
+    @Override
+    public String modifyComment(int commentId, String comment) {
+        commentMapper.modifyComment(commentId, comment);
+        return "comment modified!";
+    }
 }

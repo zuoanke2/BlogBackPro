@@ -11,7 +11,7 @@
         INSERT INTO comment (authorid, blogid, comment) VALUES (#{authorId}, #{blogId}, #{comment})
     </insert>
 
-    <update id="updateComment">
+    <update id="modifyComment">
         UPDATE comment SET comment = #{comment} where commentid = #{commentId}
     </update>
 
@@ -21,5 +21,9 @@
 
     <select id="queryCommendListByUserId">
         SELECT * from comment where authorid = #{userId}
+    </select>
+
+    <select id="queryCommentAuthor" resultType="Integer">
+        SELECT authorid from comment where commentid = #{commentId}
     </select>
 </mapper>

@@ -18,9 +18,11 @@ public interface CommentMapper {
 
     void addComment(int authorId, int blogId, String comment);
 
-    void updateComment(int commentId, String comment);
+    void modifyComment(int commentId, String comment);
 
     void deleteComment(int commentId);
 
     List<CommentBean> queryCommendListByUserId(int userId);
+
+    int queryCommentAuthor(int commentId);
 }
