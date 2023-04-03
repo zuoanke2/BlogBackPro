@@ -1,5 +1,6 @@
 package com.BlogBackPro.controller;
 
+import com.BlogBackPro.mapper.BlogMapper;
 import com.BlogBackPro.mapper.CommentMapper;
 import com.BlogBackPro.mapper.UserMapper;
 import com.BlogBackPro.model.CommentBean;
@@ -16,6 +17,8 @@ public class CommentController {
     UserMapper userMapper;
     @Resource
     CommentMapper commentMapper;
+    @Resource
+    BlogMapper blogMapper;
 
     @Autowired
     private CommentService commentService;
@@ -37,6 +40,16 @@ public class CommentController {
             return commentService.modifyComment(commentBean.getCommentId(), commentBean.getComment());
         } else {
             return "invalid user or not your comment!";
+        }
+    }
+
+    @PostMapping("/comment/delete")
+    public String deleteComment(@RequestBody CommentBean commentBean) {
+        String userName = userMapper.queryUserNameById(commentBean.getAuthorId());
+        if (commentBean.getToken().equals(userMapper.getUserToken(userName)) && ((commentBean.getAuthorId() == commentMapper.queryCommentAuthor(commentBean.getCommentId())) || (commentBean.getAuthorId() == blogMapper.queryAuthorByBlogId(commentBean.getBlogId())))) {
+            return commentService.deleteComment(commentBean.getCommentId());
+        } else {
+            return "invalid user!";
         }
     }
 }

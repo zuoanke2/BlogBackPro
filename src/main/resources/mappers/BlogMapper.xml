@@ -26,4 +26,8 @@
     <select id="queryBlogByBlogId" resultType="com.BlogBackPro.model.BlogBean">
         SELECT * from blog where blogid = #{blogId}
     </select>
+
+    <select id="queryAuthorByBlogId" resultType="Integer">
+        SELECT authorid from blog where blogid = #{blogId}
+    </select>
 </mapper>

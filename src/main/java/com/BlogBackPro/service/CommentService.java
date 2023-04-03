@@ -10,4 +10,6 @@ public interface CommentService {
     String addComment(int authorId, int blogId, String comment);
 
     String modifyComment(int commentId, String comment);
+
+    String deleteComment(int commentId);
 }

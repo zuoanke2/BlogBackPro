@@ -18,5 +18,7 @@ public interface BlogMapper {
     List<BlogBean> queryBlogsByUserId(int authorId);
 
     BlogBean queryBlogByBlogId(int blogId);
+
+    int queryAuthorByBlogId(int blogId);
 }
 

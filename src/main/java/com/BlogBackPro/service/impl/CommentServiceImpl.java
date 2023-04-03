@@ -22,4 +22,10 @@ public class CommentServiceImpl implements CommentService {
         commentMapper.modifyComment(commentId, comment);
         return "comment modified!";
     }
+
+    @Override
+    public String deleteComment(int commentId) {
+        commentMapper.deleteComment(commentId);
+        return "comment deleted!";
+    }
 }
