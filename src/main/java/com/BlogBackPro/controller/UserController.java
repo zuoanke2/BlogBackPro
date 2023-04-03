@@ -1,12 +1,9 @@
 package com.BlogBackPro.controller;
 
-import com.BlogBackPro.mapper.UserMapper;
 import com.BlogBackPro.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import com.BlogBackPro.model.UserVO;
-
-import javax.annotation.Resource;
 
 @RestController
 public class UserController {

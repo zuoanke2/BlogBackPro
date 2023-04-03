@@ -15,6 +15,10 @@
         SELECT token from user where username = #{userName}
     </select>
 
+    <select id="queryUserNameById" resultType="String">
+        SELECT username from user where userid = #{userId}
+    </select>
+
     <insert id="newUser">
         INSERT INTO user (username, password) VALUES (#{userName}, #{passWord})
     </insert>
