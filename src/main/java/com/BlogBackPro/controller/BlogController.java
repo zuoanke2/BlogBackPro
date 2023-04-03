@@ -26,4 +26,14 @@ public class BlogController {
             return "invalid user!";
         }
     }
+
+    @PostMapping("/blog/modify")
+    public String modifyBlog(@RequestBody BlogBean blogBean) {
+        String userName = userMapper.queryUserNameById(blogBean.getAuthorId());
+        if (blogBean.getToken().equals(userMapper.getUserToken(userName))) {
+            return blogService.modifyBlog(blogBean.getTitle(), blogBean.getContent(), blogBean.getBlogId());
+        } else {
+            return "invalid user!";
+        }
+    }
 }

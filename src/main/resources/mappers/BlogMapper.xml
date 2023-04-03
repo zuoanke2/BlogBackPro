@@ -6,4 +6,8 @@
     <insert id="newBlog">
         INSERT INTO blog (title, content, authorid) VALUES (#{title}, #{content}, #{authorId})
     </insert>
+
+    <update id="modifyBlog">
+        UPDATE blog SET content = #{content}, title = #{title} where blogid = #{blogId}
+    </update>
 </mapper>

@@ -16,4 +16,10 @@ public class BlogServiceImpl implements BlogService {
         blogMapper.newBlog(title, content, authorId);
         return "new blog created!";
     }
+
+    @Override
+    public String modifyBlog(String title, String content, int blogId) {
+        blogMapper.modifyBlog(title, content, blogId);
+        return "blog has been modified!";
+    }
 }
