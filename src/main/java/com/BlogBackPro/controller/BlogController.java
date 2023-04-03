@@ -36,4 +36,14 @@ public class BlogController {
             return "invalid user!";
         }
     }
+
+    @PostMapping("/blog/delete")
+    public String deleteBlog(@RequestBody BlogBean blogBean) {
+        String userName = userMapper.queryUserNameById(blogBean.getAuthorId());
+        if (blogBean.getToken().equals(userMapper.getUserToken(userName))) {
+            return blogService.deleteBlog(blogBean.getBlogId());
+        } else {
+            return "invalid user!";
+        }
+    }
 }

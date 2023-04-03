@@ -10,4 +10,8 @@
     <update id="modifyBlog">
         UPDATE blog SET content = #{content}, title = #{title} where blogid = #{blogId}
     </update>
+
+    <delete id="deleteBlog">
+        DELETE FROM blog WHERE blogid = #{blogId}
+    </delete>
 </mapper>

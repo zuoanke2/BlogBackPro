@@ -7,4 +7,6 @@ public interface BlogService {
     String newBlog(String title, String content, int authorId);
 
     String modifyBlog(String title, String content, int blogId);
+
+    String deleteBlog(int blogId);
 }

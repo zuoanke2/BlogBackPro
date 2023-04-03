@@ -22,4 +22,10 @@ public class BlogServiceImpl implements BlogService {
         blogMapper.modifyBlog(title, content, blogId);
         return "blog has been modified!";
     }
+
+    @Override
+    public String deleteBlog(int blogId) {
+        blogMapper.deleteBlog(blogId);
+        return "this blog was deleted!";
+    }
 }
