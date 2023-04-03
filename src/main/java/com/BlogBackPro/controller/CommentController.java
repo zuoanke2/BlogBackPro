@@ -46,7 +46,7 @@ public class CommentController {
     @PostMapping("/comment/delete")
     public String deleteComment(@RequestBody CommentBean commentBean) {
         String userName = userMapper.queryUserNameById(commentBean.getAuthorId());
-        if (commentBean.getToken().equals(userMapper.getUserToken(userName)) && ((commentBean.getAuthorId() == commentMapper.queryCommentAuthor(commentBean.getCommentId())) || (commentBean.getAuthorId() == blogMapper.queryAuthorByBlogId(commentBean.getBlogId())))) {
+        if (commentBean.getToken().equals(userMapper.getUserToken(userName)) && ((commentBean.getAuthorId() == commentMapper.queryCommentAuthor(commentBean.getCommentId())) || (commentBean.getAuthorId() == blogMapper.queryAuthorIdByBlogId(commentBean.getBlogId())))) {
             return commentService.deleteComment(commentBean.getCommentId());
         } else {
             return "invalid user!";

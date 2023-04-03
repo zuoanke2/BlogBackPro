@@ -27,7 +27,7 @@
         SELECT * from blog where blogid = #{blogId}
     </select>
 
-    <select id="queryAuthorByBlogId" resultType="Integer">
+    <select id="queryAuthorIdByBlogId" resultType="Integer">
         SELECT authorid from blog where blogid = #{blogId}
     </select>
 

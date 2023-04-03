@@ -19,7 +19,7 @@ public interface BlogMapper {
 
     BlogBean queryBlogByBlogId(int blogId);
 
-    int queryAuthorByBlogId(int blogId);
+    int queryAuthorIdByBlogId(int blogId);
 
     String queryTitleByBlogId(int blogId);
 }

@@ -1,5 +1,6 @@
 package com.BlogBackPro.controller;
 
+import com.BlogBackPro.mapper.BlogMapper;
 import com.BlogBackPro.mapper.CommentMapper;
 import com.BlogBackPro.mapper.UserMapper;
 import com.BlogBackPro.model.BlogBean;
@@ -22,6 +23,8 @@ public class BlogController {
     @Resource
     private UserMapper userMapper;
     @Resource
+    private BlogMapper blogMapper;
+    @Resource
     private CommentMapper commentMapper;
 
     @PostMapping("/blog/new")
@@ -37,7 +40,7 @@ public class BlogController {
     @PostMapping("/blog/modify")
     public String modifyBlog(@RequestBody BlogBean blogBean) {
         String userName = userMapper.queryUserNameById(blogBean.getAuthorId());
-        if (blogBean.getToken().equals(userMapper.getUserToken(userName))) {
+        if (blogBean.getToken().equals(userMapper.getUserToken(userName)) && (blogMapper.queryAuthorIdByBlogId(blogBean.getBlogId()) == blogBean.getAuthorId())) {
             return blogService.modifyBlog(blogBean.getTitle(), blogBean.getContent(), blogBean.getBlogId());
         } else {
             return "invalid user!";
@@ -47,7 +50,7 @@ public class BlogController {
     @PostMapping("/blog/delete")
     public String deleteBlog(@RequestBody BlogBean blogBean) {
         String userName = userMapper.queryUserNameById(blogBean.getAuthorId());
-        if (blogBean.getToken().equals(userMapper.getUserToken(userName))) {
+        if (blogBean.getToken().equals(userMapper.getUserToken(userName)) && (blogMapper.queryAuthorIdByBlogId(blogBean.getBlogId()) == blogBean.getAuthorId())) {
             return blogService.deleteBlog(blogBean.getBlogId());
         } else {
             return "invalid user!";
