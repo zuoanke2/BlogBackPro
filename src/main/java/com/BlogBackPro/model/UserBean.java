@@ -1,6 +1,6 @@
 package com.BlogBackPro.model;
 
-public class UserVO {
+public class UserBean {
     private int userId;
     private String userName;
     private String passWord;
