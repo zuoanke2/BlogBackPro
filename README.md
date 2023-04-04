@@ -15,8 +15,8 @@ You already done that!
 3, my database port is 3306, and my database name is test, if you set these the same with mine, you don't need to modify anything of the project files.  
 4, otherwise, please modify these parameters in the application.yml file in the resources folder.  
 5, IDEA has already integrated maven, so you don't need any configuration, just wait for maven automatically grab every library this project need.  
-6, when maven finish its job, just click the Run button of green color on the top bar of the window and it will run the RunService.  
-<img width="287" alt="image" src="https://user-images.githubusercontent.com/117051280/217759834-d6d5a3b1-04c3-4270-b21b-233add778a34.png">  
+6, when maven finish its job, just click the Run button of green color on the top bar of the window and it will run the Run.  
+<img width="303" alt="image" src="https://user-images.githubusercontent.com/117051280/229684191-7a46ef3d-22d5-4287-a96d-687975fbd749.png">  
 6, when maven finish its job, just click the Run button of green color on the top bar of the window and it will run the DemoApplication.    
 7, now I beileve the backend service is running on 8080 port.  
 ## Backend Service  
