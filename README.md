@@ -1,5 +1,7 @@
 # BlogBackPro
 ## Build and run the project
+### My enviroment  
+MacOS 13.3, Java19, IntelliJ IDEA 2022.3.3, SpringBoot Freamwork
 ### Pull the code
 You already done that!
 ### install the DB
